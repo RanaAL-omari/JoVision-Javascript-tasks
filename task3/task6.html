@@ -1,0 +1,88 @@
+<html>
+<script>
+function Buttonone(){
+    let result = [];
+    let arr = [];
+    for (let i = 0; i < 100; i++) {
+        arr.push(i);
+    for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 3 !== 0 ){
+        result.push(arr[i]);
+    }   
+}}
+    console.log('Buttonone',result);
+}
+    function Buttontwo(){
+    let arr = [];
+    for (let i = 0; i < 100; i++) {
+        arr.push(i);
+        for (let i = 100;i < 150;i++) {
+        arr.push(i);
+}}
+    console.log('Button Two ',arr);
+}
+    function Buttonthree (){
+        let result = [];
+        let arr = [];
+
+    for (let i = 0; i < 100; i++) {
+        arr.push(i);
+    for (let i = 0; i<arr.length ; i++) {
+        result.push(arr[i] + 3);
+        
+    }
+
+    }
+    console.log('Button three ',result);
+
+    }
+    function ButtonFour(){
+    let arr = [];
+    let result = [];
+    for(let i=0; i<100 ; i++ ){
+        arr.push(i);
+    for (let i =20 ; i<=40 ; i++){
+    result.push(arr[i]);
+}
+    
+    }
+    console.log('Button Four ',result);
+
+}
+function ButtonFive(){
+    let arr =[];
+    let result = [];
+    for(let i =0;i<100;i++){
+        arr.push(i);
+
+    }
+    shuffleArray(arr);
+    console.log("shuffled array in the console",arr)
+    arr.sort((e,r) => e - r);
+    console.log("sorts it in descending order ",arr)
+
+}
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+          let j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+
+
+</script>
+<body>
+    <button onclick="Buttonone()">one</button>
+    <button onclick="Buttontwo()">two</button>
+    <button onclick="Buttonthree()">three</button>
+    <button onclick="ButtonFour()">Four</button>
+    <button onclick="ButtonFive()">Five</button>
+
+
+
+
+</body>
+
+
+</html>

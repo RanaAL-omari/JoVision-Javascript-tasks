@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script>
+        function Sum() {
+            let numbers = [];
+            for (let i = 0; i <= 100; i++) {
+                numbers.push(i);
+            }
+
+            //let sum = numbers.reduce((total, num) => total + num, 0);
+            document.getElementById("result").innerText = "Sum: " + sum;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="Sum()">Click me</button>
+    <p id="result"></p>
+</body>
+</html>

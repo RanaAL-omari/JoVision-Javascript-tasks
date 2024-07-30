@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+</head>
+<body>
+    <button id="getIpButton">Get IP</button>
+
+    <script>
+        document.getElementById('getIpButton').addEventListener('click', function() {
+            const button = this;
+
+            fetch('https://api.ipify.org/?format=json')
+                .then(res => {
+                    if (!res.ok) {   }
+                    return res.json();
+                    
+                })
+                .then(data => {
+                button.textContent = data.ip;
+                })
+                .catch(error => console.log(error))
+            });
+    </script>
+</body>
+</html>

@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script> function functionToExecute() {
-document.write("Hello word");
-}
+<html>
+<head><title></title></head>
 
-    </script>
-    <title>Document</title>
-</head>
 <body>
-    <button onclick="functionToExecute()">Click me</button>
+    <div id="message">The time should update every second</div>
+        <p id="clock"></p>
+        
 
-</body> 
+    <script>
+        function updateclock(){
+        const MyTimer = new Date();
+        const Hours = MyTimer.getHours();
+        const Minutes = MyTimer.getMinutes();
+        const Seconds = MyTimer.getSeconds();
 
+
+        timeString = Hours.toString().padStart(2, '0')+ ' : ' +
+        Minutes.toString().padStart(2, '0') + ' : '
+        Seconds.toString().padStart(2, '0');
+
+        document.getElementById('clock').innerText = `${Hours}:${Minutes}:${Seconds}`;
+    
+        }
+
+    setInterval(updateclock , 1000);
+    updateclock();
+        </script>
+</body>
 </html>
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    const submitButton = document.getElementById('submit');
+
+    submitButton.addEventListener('click', () => {
+        const nameField = document.getElementById('name');
+        const name = nameField.value;
+
+        if (name.trim() === "") {
+            alert("Please enter a name.");
+            return;
+        }
+
+        fetch(`https://api.agify.io?name=${name}`)
+            .then(response => response.json())
+            .then(data => {
+                const { age } = data;
+                alert(`Your name is: ${name}\nYour age is: ${age}`);
+            })
+            .catch(error => {
+                console.error('Error fetching age:', error);
+                alert("There was an error processing your request. Please try again.");
+            });
+    });
+});
+
+
+
+
+
+</script>
+<body>
+    <h1>Age Predictor</h1>
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Enter your name">
+    <button id="submit">Submit</button>
+</body>
+</html>

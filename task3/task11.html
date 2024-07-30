@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <button id="getIPButton">Get IP</button>
+
+    <script>
+        
+        document.getElementById('getIPButton').addEventListener('click', async function() {
+            const button = this; 
+            
+            
+            const apiUrl = 'https://api.ipify.org/?format=json';
+
+              //  const apiUrl = 'https://api.ipify.orgx/?format=json';
+
+            try {
+                
+                const res = await fetch(apiUrl);
+                
+                if (!res.ok) {
+                    throw new Error('Network response was not ok ' + res.statusText);
+                }
+
+                const data = await res.json();
+                
+                button.textContent = data.ip;
+            } catch (error) {
+                alert('There was a problem with the request: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>
